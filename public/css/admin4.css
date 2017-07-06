@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800|Muli:400,600,700');
+
+.no-padding {
+   padding: 0;
+}
+#page-wrapper {
+    padding: 20px;
+}
+.content-wrapper{
+  background:#fbfbfb;
+  padding: 45px 0;
+}
+.breadcrumb{
+  border-top-right-radius:5px;
+  border-top-left-radius:5px;
+  padding:15px 20px;
+  background:#F3F0EB;
+}
+.breadcrumb > .active {
+    color:#000;
+    font-weight:bold;
+    
+}
+.page-header-top {
+  font-family:"Montserrat", sans-serif;
+  font-weight:800;
+  color:#1442a1;
+  font-size:28px;
+  text-transform:uppercase;
+  margin:0 0 45px 30px;
+}
+.panel-primary > .panel-heading{
+    background:#fff;
+    border:1px solid #b4dac1;
+    padding:30px 20px;
+}
+.panel-heading{
+  border-radius:5px;
+  -webkit-box-shadow:0px 0px 16px -7px rgba(0,0,0,0.36);
+  -moz-box-shadow:0px 0px 16px -7px rgba(0,0,0,0.36);
+   box-shadow:0px 0px 16px -7px rgba(0,0,0,0.36);
+}
+.panel-primary
+{
+  border-color:#b4dac1;
+}
+.top-box{
+  margin-bottom:30px;
+}
+.text-left{
+  text-align:left;
+}
+.huge-number{
+  font-family:"Montserrat", sans-serif;
+  font-weight:800;
+  color:#1442a1;
+  font-size:28px;
+}
+.huge-text{
+  font-family:"Muli", sans-serif;
+  color:#1442a1;
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.icon-ptos {
+    background:url(../images/ptos-admin-sprite.png) no-repeat scroll 0 0;
+    display: inline-block;
+    position: relative;
+}
+.icon-silinder{
+  background-position:-24px -579px;
+  width: 30px;
+  height: 36px;
+}
+.icon-tick{
+  background-position:-20px -416px;
+  width: 39px;
+  height: 40px;
+}
+.icon-clock{
+  background-position:-23px -471px;
+  width: 33px;
+  height: 39px;
+}
+.icon-arrow{
+  background-position:-19px -524px;
+  width: 40px;
+  height: 40px;
+}
+
+.icon-home{
+  background-position:-20px -20px;
+  width: 15px;
+  height: 14px;
+  top: 2px;
+}
+

@@ -1,0 +1,45 @@
+@media only screen and (max-width: 1150px) {
+  .admin-pages .navbar-inverse .navbar-left .custom-search-form {
+    width: auto; } }
+@media only screen and (max-width: 842px) {
+  .admin-pages .navbar-inverse .top-nav {
+    padding: 15px; } }
+@media only screen and (max-width: 822px) {
+  .admin-pages #page-wrapper {
+    position: relative;
+    top: 60px; } }
+@media only screen and (max-width: 768px) {
+  .admin-pages .navbar-inverse .navbar-left {
+    margin-left: 0; }
+  .admin-pages .navbar-inverse {
+    background-color: #002576; }
+  .admin-pages #page-wrapper {
+    position: relative;
+    top: 0px; }
+
+  #footer {
+    text-align: center; }
+
+  .text-right {
+    text-align: center; }
+
+  .navbar {
+    margin-bottom: 0; }
+
+  .navbar-fixed-top {
+    position: relative; }
+
+  body {
+    margin-top: 0; }
+
+  .navbar-nav li a.navbar-brand {
+    display: none; } }
+@media only screen and (max-width: 358px) {
+  .admin-pages .navbar-inverse .navbar-right .top-left,
+  .admin-pages .navbar-inverse .navbar-right .top-right {
+    width: 100%;
+    text-align: center; }
+  .admin-pages .navbar-inverse .navbar-right .top-left {
+    margin-bottom: 20px; } }
+
+/*# sourceMappingURL=admin-responsive1.css.map */

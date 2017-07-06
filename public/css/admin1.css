@@ -1,0 +1,261 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800|Muli:400,600,700);
+@import url(_my-chartist-settings.scss);
+@import url(chartist.scss);
+/****navigation menu******/
+.side-nav {
+  background: #12388b;
+  /* Old browsers */
+  top: 0; }
+
+.admin-pages .navbar-inverse .navbar-collapse {
+  background-color: #002576; }
+.admin-pages .navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 20px 15px;
+  border-bottom: 1px solid #1b4f89; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a .icon-dashboard {
+    background-position: -20px -20px;
+    width: 15px;
+    height: 14px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a .icon-scheme {
+    background-position: -20px -51px;
+    width: 16px;
+    height: 11px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a .icon-mylab {
+    background-position: -22px -81px;
+    width: 12px;
+    height: 14px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a .icon-details {
+    background-position: -23px -109px;
+    width: 12px;
+    height: 17px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a .icon-payment {
+    background-position: -22px -142px;
+    width: 15px;
+    height: 11px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a .icon-report {
+    background-position: -22px -169px;
+    width: 15px;
+    height: 15px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a .icon-administration {
+    background-position: -23px -199px;
+    width: 13px;
+    height: 16px; }
+.admin-pages .navbar-inverse .navbar-nav .active > a, .admin-pages .navbar-inverse .navbar-nav .active > a:focus, .admin-pages .navbar-inverse .navbar-nav .active > a:hover {
+  background-color: #1afc69;
+  color: #1442a1; }
+.admin-pages .navbar-inverse .navbar-nav > li > a.navbar-brand:hover {
+  background-color: transparent !important; }
+.admin-pages .navbar-inverse .navbar-nav > li > a:hover, .admin-pages .navbar-inverse .navbar-nav > li > a:focus, .admin-pages .navbar-inverse .navbar-nav > li.active a {
+  background-color: #1afc69 !important;
+  color: #1442a1; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a:hover .icon-dashboard, .admin-pages .navbar-inverse .navbar-nav > li > a:focus .icon-dashboard, .admin-pages .navbar-inverse .navbar-nav > li.active a .icon-dashboard {
+    background-position: -50px -20px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a:hover .icon-scheme, .admin-pages .navbar-inverse .navbar-nav > li > a:focus .icon-scheme, .admin-pages .navbar-inverse .navbar-nav > li.active a .icon-scheme {
+    background-position: -50px -51px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a:hover .icon-mylab, .admin-pages .navbar-inverse .navbar-nav > li > a:focus .icon-mylab, .admin-pages .navbar-inverse .navbar-nav > li.active a .icon-mylab {
+    background-position: -52px -81px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a:hover .icon-details, .admin-pages .navbar-inverse .navbar-nav > li > a:focus .icon-details, .admin-pages .navbar-inverse .navbar-nav > li.active a .icon-details {
+    background-position: -53px -109px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a:hover .icon-payment, .admin-pages .navbar-inverse .navbar-nav > li > a:focus .icon-payment, .admin-pages .navbar-inverse .navbar-nav > li.active a .icon-payment {
+    background-position: -52px -142px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a:hover .icon-report, .admin-pages .navbar-inverse .navbar-nav > li > a:focus .icon-report, .admin-pages .navbar-inverse .navbar-nav > li.active a .icon-report {
+    background-position: -52px -169px; }
+  .admin-pages .navbar-inverse .navbar-nav > li > a:hover .icon-administration, .admin-pages .navbar-inverse .navbar-nav > li > a:focus .icon-administration, .admin-pages .navbar-inverse .navbar-nav > li.active a .icon-administration {
+    background-position: -53px -199px; }
+.admin-pages .navbar-inverse .top-nav {
+  padding: 15px 20px; }
+.admin-pages .navbar-inverse .navbar-right {
+  margin-right: 0; }
+  .admin-pages .navbar-inverse .navbar-right .top-left {
+    color: #fff;
+    font-size: 12px;
+    font-family: "Muli";
+    color: #fff;
+    padding: 5px 40px 5px 0; }
+    .admin-pages .navbar-inverse .navbar-right .top-left .text-name {
+      color: #1afc69; }
+  .admin-pages .navbar-inverse .navbar-right .top-right {
+    padding: 5px 0; }
+    .admin-pages .navbar-inverse .navbar-right .top-right .icon-admin-ptos {
+      padding-right: 40px; }
+.admin-pages .navbar-inverse .navbar-left {
+  margin-left: 230px; }
+  .admin-pages .navbar-inverse .navbar-left .custom-search-form {
+    width: 520px; }
+    .admin-pages .navbar-inverse .navbar-left .custom-search-form .btn,
+    .admin-pages .navbar-inverse .navbar-left .custom-search-form .form-control {
+      font-size: 12px; }
+.admin-pages #page-wrapper {
+  background: url("../images/bg-spiral-pattern.jpg") repeat; }
+.admin-pages .navbar-brand {
+  height: 90px; }
+
+/****icon******/
+.icon-admin-nav {
+  background: url("../images/ptos-admin-sprite.png") no-repeat;
+  padding-left: 30px; }
+
+.icon-admin-ptos {
+  background: url("../images/ptos-admin-sprite.png") no-repeat;
+  display: inline-block;
+  position: relative; }
+
+.icon-profile {
+  background-position: -21px -375px;
+  width: 20px;
+  height: 20px;
+  top: 5px;
+  right: 5px; }
+
+.icon-message {
+  background-position: -21px -246px;
+  width: 20px;
+  height: 14px;
+  top: 2px; }
+
+.icon-troly {
+  background-position: -20px -275px;
+  width: 21px;
+  height: 19px;
+  top: 5px; }
+
+.icon-setting {
+  background-position: -21px -309px;
+  width: 20px;
+  height: 20px;
+  top: 5px; }
+
+.icon-book {
+  background-position: -23px -344px;
+  width: 15px;
+  height: 20px;
+  top: 5px; }
+
+.icon-search {
+  background-position: -65px -307px;
+  width: 16px;
+  height: 16px; }
+
+.message-wrapper {
+  position: relative; }
+
+.message-noti {
+  background-color: #ff182e;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 5px;
+  position: absolute;
+  left: 13px;
+  top: -15px; }
+
+/****footer******/
+#footer {
+  font-size: 11px;
+  font-family: "Muli";
+  padding: 20px 0 0; }
+
+/*****chart******/
+.lab-test {
+  margin: 15px 0; }
+  .lab-test .timeline-title {
+    padding: 0; }
+
+.lab-row {
+  font-size: 11px;
+  height: 40px;
+  margin-top: 5px;
+  position: relative; }
+  .lab-row .lab-num {
+    font-weight: bold;
+    padding-right: 20px; }
+  .lab-row .lab-code {
+    color: #999999;
+    font-weight: bold; }
+  .lab-row .lab-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    content: "";
+    height: 5px;
+    position: absolute;
+    width: 78%; }
+  .lab-row .lab-bar2 {
+    background-color: #1afc6a;
+    border-radius: 5px;
+    content: "";
+    height: 5px;
+    position: absolute; }
+  .lab-row .lab-percent {
+    float: right;
+    margin-top: -5px; }
+
+.chart-wrapper {
+  font-family: "Muli"; }
+  .chart-wrapper .timeline-title {
+    padding: 0; }
+  .chart-wrapper .category-rank {
+    margin-top: 5px; }
+  .chart-wrapper .category-wrap {
+    font-size: 12px;
+    margin-right: 20px;
+    vertical-align: middle; }
+  .chart-wrapper .category-blue {
+    background-color: #2B729C;
+    border-radius: 10px;
+    display: inline-block;
+    height: 10px;
+    width: 10px; }
+  .chart-wrapper .category-green {
+    background-color: #1AFD66;
+    border-radius: 10px;
+    display: inline-block;
+    height: 10px;
+    width: 10px; }
+  .chart-wrapper .category-brown {
+    background-color: #F39646;
+    border-radius: 10px;
+    display: inline-block;
+    height: 10px;
+    width: 10px; }
+
+.ct-series-a .ct-point,
+.ct-series-a .ct-line,
+.ct-series-a .ct-bar,
+.ct-series-a .ct-slice-donut {
+  stroke: #2B729C; }
+
+.ct-series-b .ct-point,
+.ct-series-b .ct-line,
+.ct-series-b .ct-bar,
+.ct-series-b .ct-slice-donut {
+  stroke: #1AFD66; }
+
+.ct-series-c .ct-point,
+.ct-series-c .ct-line,
+.ct-series-c .ct-bar,
+.ct-series-c .ct-slice-donut {
+  stroke: #F39646; }
+
+.ct-line {
+  stroke-width: 1px; }
+
+.ct-label {
+  color: #000; }
+
+.ct-chart {
+  position: relative; }
+
+.ct-axis-x {
+  font-size: 11px; }
+
+.icon-arrow-bread {
+  margin: 0 5px;
+  color: #9F9DB5; }
+
+/*# sourceMappingURL=admin1.css.map */
