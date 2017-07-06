@@ -26,14 +26,7 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        footer {
-    position: fixed;
-    height: 100px;
-    bottom: 0;
-    width: 100%;
-}
-    </style>
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -71,7 +64,7 @@
                 </div>
             </ul>   
             <ul class="nav navbar-right top-nav">
-                <li class="top-left">
+                <!-- <li class="top-left">
                     <span class="icon-admin-ptos icon-profile"></span>
                     <span>Hello,</span>
                     <span class="text-name">Hayat :-)</span>
@@ -81,6 +74,22 @@
                     <span class="icon-admin-ptos icon-troly"></span>
                     <span class="icon-admin-ptos icon-setting"></span>
                     <span class="icon-admin-ptos icon-book"></span>
+                </li> -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ Auth::user()->name }} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -106,7 +115,12 @@
                         <a href="#"><span class="icon-admin-nav icon-report"> Report</a>
                     </li>
                     <li>
-                        <a href="#"><span class="icon-admin-nav icon-administration"> Administration</a>
+                        <a href="#" data-toggle="collapse" data-target="#demo"><span class="icon-admin-nav icon-administration">Administration <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse {{Request::segment(1) == 'user' || Request::segment(1) == 'role' || Request::segment(1) == 'permission' ? 'in' : ''}}">
+                            <li class="{{Request::segment(1) == 'user' ? 'active' : ''}}"><a href="{{ URL::to('/user')}}"> User Listing </a></li> 
+                            <li class="{{Request::segment(1) == 'role' ? 'active' : ''}}"><a href="{{ URL::to('/role')}}"> Role Listing </a></li> 
+                            <li class="{{Request::segment(1) == 'permission' ? 'active' : ''}}"><a href="{{ URL::to('/permission')}}"> Permission Listing </a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -119,13 +133,30 @@
                     @yield('content')
                 </div>
             </div>
-          
-          <!-- footer -->
-            <div id="footer" class="col-lg-12">
-                <div class="col-sm-9">Copyright ©2017. Proficiency Testing Online System.</div>
-                <div class="col-sm-3 text-right">Version 1.0</div>
+            <!-- MODAL -->
+            <div class="modal fade" id="myModal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div id="modal-lg-content"></div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div id="modal-content"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MODAL -->
+              
+              <!-- footer -->
+                <div id="footer" class="col-lg-12">
+                    <div class="col-sm-9">Copyright ©2017. Proficiency Testing Online System.</div>
+                    <div class="col-sm-3 text-right">Version 1.0</div>
+                </div>
+            </div>
         <!-- /#page-wrapper -->
 
     </div>
