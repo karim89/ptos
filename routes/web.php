@@ -14,7 +14,9 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', 'HomeController@index');
+Route::get('/', 'WebsiteController@index');
+Route::get('/reg', 'WebsiteController@register');
+Route::get('/about', 'WebsiteController@about');
 
 Route::post('/authenticate', 'Auth\LoginController@authenticate');
 

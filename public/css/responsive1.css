@@ -1,0 +1,71 @@
+@media only screen and (max-width: 1200px) {
+  #header .header-top img {
+    padding-right: 8px; }
+
+  .menu .navbar-nav > li > a {
+    padding: 10px 28px; } }
+@media only screen and (max-width: 991px) {
+  .menu .navbar-nav > li > a {
+    padding: 10px; }
+
+  .not-front #header {
+    margin: 0 10px; }
+
+  .not-front .content {
+    z-index: -1; } }
+@media only screen and (max-width: 768px) {
+  #header .header-top {
+    text-align: center; }
+  #header .header-right {
+    text-align: center;
+    background-color: #16536d;
+    margin-top: 10px;
+    padding: 10px; }
+  #header .navbar-collapse.in {
+    overflow: unset; }
+  #header .navbar-collapse {
+    border: 0; }
+  #header .navbar-toggle {
+    margin-bottom: 0;
+    margin-top: 0;
+    background-color: #16536D;
+    border-radius: 0; }
+    #header .navbar-toggle .icon-bar {
+      border: 1px solid #fff; }
+  #header #w3c-content {
+    left: 20px; }
+
+  .menu .nav > li {
+    background-color: #15516b;
+    opacity: 0.9; }
+  .menu .nav > li > a {
+    padding: 10px; }
+  .menu .nav > li > a.active {
+    background: transparent url("../images/bg-menu.png") repeat-x scroll 0 0;
+    height: 41px; }
+  .menu .navbar-nav {
+    margin: 0;
+    background: none; }
+
+  #header .navbar-toggle {
+    right: 0 !important; } }
+@media only screen and (max-width: 530px) {
+  .logo-ptos {
+    width: 400px; }
+
+  .login-page .modal-dialog {
+    width: auto; }
+  .login-page .modal-body input[type="text"],
+  .login-page .modal-body input[type="submit"] {
+    width: 100%; } }
+@media only screen and (max-width: 440px) {
+  .logo-ptos {
+    width: 320px; } }
+@media only screen and (max-width: 365px) {
+  .logo-ptos {
+    width: 270px; }
+
+  .login-page .modal-body {
+    padding: 15px 15px 25px; } }
+
+/*# sourceMappingURL=responsive1.css.map */

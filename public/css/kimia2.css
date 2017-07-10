@@ -1,0 +1,152 @@
+/****************/
+/*** Homepage ***/
+/****************/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,600,700);
+body {
+  font-family: 'Lato'; }
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+/****************/
+/*** Banner ***/
+/****************/
+.carousel-indicators li {
+  background: url("../images/ptos-sprite.png") no-repeat -135px -22px;
+  width: 17px;
+  height: 17px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  text-indent: -999px; }
+
+.carousel-indicators .active {
+  background: url("../images/ptos-sprite.png") no-repeat -96px -22px;
+  width: 17px;
+  height: 17px; }
+
+.carousel-control.right {
+  background: url("../images/ptos-sprite.png") no-repeat -256px -20px;
+  width: 40px;
+  height: 40px;
+  top: 50%; }
+
+.glyphicon-chevron-right:before {
+  content: ''; }
+
+.carousel-control.left {
+  background: url("../images/ptos-sprite.png") no-repeat -191px -20px;
+  width: 40px;
+  height: 40px;
+  top: 50%; }
+
+.glyphicon-chevron-left:before {
+  content: ''; }
+
+.cloud-bg {
+  background: url("../images/bg-cloud-white.png") no-repeat center/cover;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0; }
+  .cloud-bg .header-text {
+    position: relative;
+    color: #000;
+    left: 50%;
+    top: 40%;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 200; }
+    .cloud-bg .header-text .title-banner {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 50px;
+      padding: 0; }
+    .cloud-bg .header-text .banner-text {
+      padding: 0; }
+
+/**************/
+/*** Footer ***/
+/**************/
+.footer {
+  min-height: 40px; }
+  .footer .row {
+    margin: 0;
+    line-height: 40px;
+    margin: 0 0 0 15px; }
+    .footer .row .best-view {
+      text-align: right;
+      padding: 0; }
+      .footer .row .best-view .best-text {
+        margin-right: 30px;
+        display: inline-block; }
+      .footer .row .best-view .footer-content {
+        background-color: #135881;
+        width: 40px;
+        height: 40px;
+        display: inline-block; }
+        .footer .row .best-view .footer-content .arrow-footer {
+          background: url("../images/ptos-sprite.png") no-repeat -328px -34px;
+          width: 17px;
+          height: 10px;
+          display: inline-block;
+          margin-right: 11px;
+          cursor: pointer; }
+        .footer .row .best-view .footer-content .arrow-footer.active {
+          background: url("../images/ptos-sprite.png") no-repeat -374px -34px;
+          width: 17px;
+          height: 10px;
+          display: inline-block;
+          margin-right: 11px;
+          cursor: pointer; }
+
+/**********************/
+/*** Slides Content ***/
+/**********************/
+.slide-content {
+  display: none;
+  position: absolute;
+  bottom: 40px;
+  height: 200px;
+  z-index: 20;
+  background: url("../images/bg-ftr.png") repeat; }
+  .slide-content .slide-text {
+    margin: 0 auto;
+    padding: 20px;
+    color: #fff; }
+    .slide-content .slide-text a {
+      color: #fff; }
+      .slide-content .slide-text a:hover {
+        text-decoration: none; }
+    .slide-content .slide-text .address-text {
+      font-size: 18px; }
+      .slide-content .slide-text .address-text:before {
+        content: '';
+        background: url("../images/ptos-sprite.png") no-repeat -105px -97px;
+        width: 12px;
+        height: 18px;
+        position: absolute;
+        margin: 5px 0 0 -20px; }
+    .slide-content .slide-text .tel-text:before {
+      content: '';
+      background: url("../images/ptos-sprite.png") no-repeat -144px -97px;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      margin: 2px 0 0 -25px; }
+    .slide-content .slide-text .email-text:before {
+      content: '';
+      background: url("../images/ptos-sprite.png") no-repeat -184px -100px;
+      width: 14px;
+      height: 11px;
+      position: absolute;
+      margin: 7px 0 0 -25px; }
+    .slide-content .slide-text .qr-text {
+      font-size: 18px; }
+
+/*# sourceMappingURL=kimia2.css.map */

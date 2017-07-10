@@ -1,0 +1,65 @@
+/************/
+/* Responsive */
+/************/
+@media only screen and (max-width: 750px) {
+	.footer {
+		.row {
+			margin: 0;
+
+			&>div {
+				width: 100%;
+				text-align: center;
+				padding: 0 5px;
+			}
+
+			.best-view {
+				text-align: center;
+				
+
+				.best-text {
+					margin-right: 0;
+					display: block;
+				}
+
+				.footer-content {
+					width: 42px;
+
+					.arrow-footer,
+					.arrow-footer.active {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.slide-content {
+		height: auto;
+	}
+
+	.cloud-bg {
+		.header-text {
+			width: 80%;
+			left: 10%;
+		}
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.cloud-bg {
+		background: none;
+
+		.header-text {
+			display: none;
+		}
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	.best-text {
+		line-height: 16px;
+	}
+	.footer-content {
+		margin-top: 10px;
+	}
+}

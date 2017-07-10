@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,600,700);
+
+body {
+	background: url(../images/bg-01.jpg) no-repeat top center;
+}
+/*.content {
+  background-color: #fff;
+  position: absolute;
+  top: 121px;
+  bottom: 68px;
+  width: 100%;
+  max-width: 1200px;
+  overflow: auto;
+}*/
+
+/*.title{
+  text-align:center;
+  color:#83AFAE;
+  font-size:38px;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}*/
+.box-1, .box-2, .box-3 {
+   background-color: #12c2ae;
+    border-radius: 3px;
+    height: 245px;
+    margin: 0 9px;
+    width: 30%;
+}
+
+.intro{
+  margin-top: 12px;
+}
+.intro, .intro-below{
+  color:#000;
+  font-size:29px; 
+}
+.intro-below{
+  margin-left:29px;
+  font-size: 28px;
+
+}
+.listStyle{
+  color:#11C2B0;
+}
+.listStyle p{
+  color:#000;;
+}
+.intro-border{
+  border-bottom:3px solid #1A8DD0;
+  width:16%;
+  margin-top:0;
+  position:absolute;
+  top:53px;
+}
+
+.intro-border-below{
+  border-bottom:3px solid #1A8DD0;
+  width:5%;
+  margin-left: 31px;
+}
+.intro-border-further{
+  border-bottom:3px solid #1A8DD0;
+  width:5%;
+  margin-left: 31px;
+}
+.further-information{
+  font-size:14px;
+}
+.address{
+   margin-left: 35px;
+   margin-bottom:50px;
+}
+.link-programme {
+  margin-top: 30px;
+  margin-bottom:30px;
+  margin-left:35px;
+  height:auto;
+}
+
+
+.link-programme a{
+   text-decoration:none;
+   cursor:pointer;
+   color:#000;
+}
+.link-programme .btn-default {
+  background-color: #E2C222;
+  border: 1px solid #E2C222;
+  border-radius: 5px; 
+  font-size: 20px;
+}
+.link-programme .btn-default:hover {
+  background-color: #198dcf;
+}

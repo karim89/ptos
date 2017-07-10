@@ -1,0 +1,40 @@
+/************/
+/* Responsive */
+/************/
+@media only screen and (max-width: 750px) {
+  .footer .row {
+    margin: 0; }
+    .footer .row > div {
+      width: 100%;
+      text-align: center;
+      padding: 0 5px; }
+    .footer .row .best-view {
+      text-align: center; }
+      .footer .row .best-view .best-text {
+        margin-right: 0;
+        display: block; }
+      .footer .row .best-view .footer-content {
+        width: 42px; }
+        .footer .row .best-view .footer-content .arrow-footer,
+        .footer .row .best-view .footer-content .arrow-footer.active {
+          margin-right: 0; }
+
+  .slide-content {
+    height: auto; }
+
+  .cloud-bg .header-text {
+    width: 80%;
+    left: 10%; } }
+@media only screen and (max-width: 500px) {
+  .cloud-bg {
+    background: none; }
+    .cloud-bg .header-text {
+      display: none; } }
+@media only screen and (max-width: 375px) {
+  .best-text {
+    line-height: 16px; }
+
+  .footer-content {
+    margin-top: 10px; } }
+
+/*# sourceMappingURL=responsive2.css.map */
