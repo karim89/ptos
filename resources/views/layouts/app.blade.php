@@ -164,11 +164,11 @@
 
     <!-- jQuery -->
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/chartist.min.js') }}"></script>
     <script src="{{ asset('js/chartist-plugin-axistitle.js') }}"></script>
     <script src="{{ asset('js/mychart.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script>
             function dataModalLg(url)
             {   
