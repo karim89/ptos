@@ -97,7 +97,7 @@
                 <ul class="nav navbar-nav side-nav">
                     <li><a class="navbar-brand" href="index.html"><img src="images/ptos-admin-logo.png"></a></li>
                     <li class="active">
-                        <a href="index.html"><span class="icon-admin-nav icon-dashboard"> Dashboard</a>
+                        <a href="{{ URL::to('/home')}}"><span class="icon-admin-nav icon-dashboard"> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><span class="icon-admin-nav icon-scheme"> Proficiency Scheme</a>

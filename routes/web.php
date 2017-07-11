@@ -23,6 +23,7 @@ Route::post('/authenticate', 'Auth\LoginController@authenticate');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/pdf', 'HomeController@pdf');
 
 // Permission
 Route::group(['prefix' => 'permission', 'middleware' => ['role:admin']], function() {

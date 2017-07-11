@@ -31,8 +31,12 @@
 			  	<div class="col-sm-3 header-right">
 			  		<span class="icon-setting"></span>
 			  		  <div id="w3c-content"><span class="ikon-jkt-w3c-font ikon-jkt-w3c-font-big">&nbsp;</span> <span class="ikon-jkt-w3c-font ikon-jkt-w3c-font-normal">&nbsp;</span> <span class="ikon-jkt-w3c-font ikon-jkt-w3c-font-small">&nbsp;</span> <span class="ikon-jkt-w3c-color ikon-jkt-w3c-color-first">&nbsp;</span> <span class="ikon-jkt-w3c-color ikon-jkt-w3c-color-second">&nbsp;</span> <span class="ikon-jkt-w3c-color ikon-jkt-w3c-color-third">&nbsp;</span> <span class="ikon-jkt-w3c-color ikon-jkt-w3c-color-reset">&nbsp;</span></div>
+			  		@if (Auth::guest())
 			  		<span class="register"><a href="{{ URL::to('/reg')}}">REGISTER</a></span>
-			  		<span class="login" data-toggle="modal" data-target="#myModal"><a href="#">LOGIN</a></span>
+			  			<span class="login" data-toggle="modal" data-target="#myModal"><a href="#">LOGIN</a></span>
+			  		@else
+			  			<span class="register"><a href="{{ URL::to('/home')}}">DASHBOARD</a></span>
+			  		@endif
 			  	</div>
 				</div>
 		  	<div class="menu row">
