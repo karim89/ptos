@@ -15,12 +15,14 @@ class CreateProficiencyTable extends Migration
     {
         Schema::create('proficiency', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type_id')->unsigned()->nullable();           
-            $table->foreign('type_id')->references('id')->on('type');
+            $table->integer('scheme_id')->unsigned()->nullable();           
+            $table->foreign('scheme_id')->references('id')->on('scheme');
             $table->integer('status_id')->unsigned()->nullable();           
             $table->foreign('status_id')->references('id')->on('status');
             $table->string('code');
             $table->string('name');
+            $table->integer('size_id')->unsigned()->nullable();           
+            $table->foreign('size_id')->references('id')->on('size');
             $table->text('description')->nullable();
             $table->integer('user_id')->unsigned()->nullable();           
             $table->foreign('user_id')->references('id')->on('users');

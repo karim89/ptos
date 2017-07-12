@@ -15,10 +15,12 @@ class CreateMaterialTable extends Migration
     {
         Schema::create('material', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type_id')->unsigned()->nullable();           
-            $table->foreign('type_id')->references('id')->on('type');
+            $table->integer('scheme_id')->unsigned()->nullable();           
+            $table->foreign('scheme_id')->references('id')->on('scheme');
             $table->integer('status_id')->unsigned()->nullable();           
             $table->foreign('status_id')->references('id')->on('status');
+            $table->integer('size_id')->unsigned()->nullable();           
+            $table->foreign('size_id')->references('id')->on('size');
             $table->string('code');
             $table->string('name');
             $table->text('description')->nullable();

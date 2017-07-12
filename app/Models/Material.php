@@ -16,9 +16,14 @@ class Material extends Model {
         return $this->belongsTo('App\User');
     }
 
-    public function type()
+    public function scheme()
     {
-        return $this->belongsTo('App\Models\Type');
+        return $this->belongsTo('App\Models\Scheme');
+    }
+
+    public function size()
+    {
+        return $this->belongsTo('App\Models\Size');
     }
 
     public function status()

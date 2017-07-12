@@ -17,6 +17,7 @@ class CreateAnalyteTable extends Migration
             $table->increments('id');
             $table->integer('status_id')->unsigned()->nullable();           
             $table->foreign('status_id')->references('id')->on('status');
+            $table->string('code');
             $table->string('name');
             $table->text('description')->nullable();
             $table->integer('user_id')->unsigned()->nullable();           

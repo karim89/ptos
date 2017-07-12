@@ -26,6 +26,10 @@ class CreateMaterialDetailTable extends Migration
             $table->text('packaging_size')->nullable();
             $table->date('validity_period')->nullable();
             $table->double('price', 15, 2)->nullable();
+            $table->integer('availability')->nullable();
+            $table->integer('amount_required')->nullable();
+            $table->integer('max_quantity_dispath')->nullable();
+            $table->string('coa')->nullable();
             $table->integer('user_id')->unsigned()->nullable();           
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

@@ -26,6 +26,23 @@ Route::get('/home', 'HomeController@index');
 Route::get('/pdf', 'HomeController@pdf');
 
 // Permission
+Route::group(['prefix' => 'scheme', 'middleware' => ['role:admin']], function() {
+	Route::get('/edit/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'SchemeController@edit']);
+	Route::post('/update/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'SchemeController@update']);
+	Route::group(['prefix' => 'proficiency', 'middleware' => ['role:admin']], function() {
+		Route::get('/', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@index']);
+		Route::get('/create', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@create']);
+		Route::post('/store', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@store']);
+		Route::get('/edit/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@edit']);
+		Route::post('/update/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@update']);
+		Route::get('/destroy/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@destroy']);
+		
+		Route::get('/detail/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@index']);
+		
+		
+	});
+});
+// Permission
 Route::group(['prefix' => 'permission', 'middleware' => ['role:admin']], function() {
 	Route::get('/', ['middleware' => ['permission:user-manager'], 'uses' => 'PermissionController@index']);
 	Route::get('/create', ['middleware' => ['permission:user-manager'], 'uses' => 'PermissionController@create']);

@@ -21,6 +21,11 @@ class Status extends Model {
         return $this->hasMany('App\Models\Proficiency');
     }
 
+    public function material()
+    {
+        return $this->hasMany('App\Models\Material');
+    }
+
 }
 
 ?>

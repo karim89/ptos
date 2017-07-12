@@ -104,12 +104,16 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li><a class="navbar-brand" href="index.html"><img src="images/ptos-admin-logo.png"></a></li>
+                    <li><a class="navbar-brand" href="index.html"><img src="{{ URL::to('images/ptos-admin-logo.png')}}"></a></li>
                     <li class="{{Request::segment(1) == 'home' ? 'active' : ''}}">
                         <a href="{{ URL::to('/home')}}"><span class="icon-admin-nav icon-dashboard"> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"><span class="icon-admin-nav icon-scheme"> Proficiency Scheme</a>
+                        <a href="#" data-toggle="collapse" data-target="#scheme"><span class="icon-admin-nav icon-scheme"> Proficiency Scheme<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="scheme" class="collapse {{Request::segment(1) == 'scheme' ? 'in' : ''}}">
+                            <li class="{{Request::segment(2) == 'proficiency' ? 'active' : ''}}"><a href="{{ URL::to('/scheme/proficiency')}}"> Profeciency Testing </a></li> 
+                            <li class="{{Request::segment(2) == 'material' ? 'active' : ''}}"><a href="{{ URL::to('/scheme/material')}}"> Quality Control Material</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#"><span class="icon-admin-nav icon-mylab"> My Lab</a>
