@@ -34,6 +34,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+        #page-wrapper{
+            min-height: 590px;
+            height: 100%; overflow: auto;
+        }
+        #footer{
+            background: url({{ asset('images/bg-spiral-pattern.jpg')}}) repeat;
+        }
+    </style>
 
 </head>
 
@@ -96,7 +105,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li><a class="navbar-brand" href="index.html"><img src="images/ptos-admin-logo.png"></a></li>
-                    <li class="active">
+                    <li class="{{Request::segment(1) == 'home' ? 'active' : ''}}">
                         <a href="{{ URL::to('/home')}}"><span class="icon-admin-nav icon-dashboard"> Dashboard</a>
                     </li>
                     <li>
@@ -127,8 +136,8 @@
             <!-- /.navbar-collapse -->
         </nav>
         <!-- Content -->
-        <div id="page-wrapper">
-            <div class="container-fluid">
+        <div id="page-wrapper"  >
+            <div class="container-fluid" >
                 <div class="row">
                     @yield('content')
                 </div>
@@ -150,13 +159,14 @@
                 </div>
             </div>
             <!-- END MODAL -->
-              
-              <!-- footer -->
-                <div id="footer" class="col-lg-12">
-                    <div class="col-sm-9">Copyright ©2017. Proficiency Testing Online System.</div>
-                    <div class="col-sm-3 text-right">Version 1.0</div>
-                </div>
-            </div>
+          
+          <!-- footer -->
+            
+        </div>
+        <div id="footer" class="col-lg-12" >
+            <div class="col-sm-9">Copyright ©2017. Proficiency Testing Online System.</div>
+            <div class="col-sm-3 text-right">Version 1.0</div>
+        </div>
         <!-- /#page-wrapper -->
 
     </div>
