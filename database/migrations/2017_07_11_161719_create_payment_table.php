@@ -20,6 +20,7 @@ class CreatePaymentTable extends Migration
             $table->integer('status_id')->unsigned()->nullable();           
             $table->foreign('status_id')->references('id')->on('status');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
