@@ -28,7 +28,7 @@ class PtDetailController extends Controller
      */
     public function index($id)
     {
-        $pt_detail = PtDetail::where('pt_id', 1)->paginate(20);
+        $pt_detail = PtDetail::where('pt_id', $id)->paginate(20);
         $pt = Pt::find($id);
         $month = $this->month();
         return view('pt_detail.index', compact('pt_detail', 'pt', 'month'));

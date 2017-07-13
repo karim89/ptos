@@ -17,6 +17,10 @@
 Route::get('/', 'WebsiteController@index');
 Route::get('/reg', 'WebsiteController@register');
 Route::get('/about', 'WebsiteController@about');
+Route::get('/pt', 'WebsiteController@pt');
+Route::get('/pt-detail/{id}', 'WebsiteController@ptDetail');
+Route::get('/pm', 'WebsiteController@pm');
+Route::get('/pm-detail/{id}', 'WebsiteController@pmDetail');
 
 Route::post('/authenticate', 'Auth\LoginController@authenticate');
 

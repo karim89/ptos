@@ -23,10 +23,10 @@
 			<div id="header" class="container">
 				<div class="header-top row">
 					<div class="col-sm-9">
-		  			<img class="logo-ptos" src="images/ptos-logo.png">
-		  			<img src="images/logo-crest-msia.png">
-		  			<img src="images/logo-kimia.png">
-		  			<img src="images/logo-negaraku.png">
+		  			<img class="logo-ptos" src="{{ asset('images/ptos-logo.png')}}">
+		  			<img src="{{ asset('images/logo-crest-msia.png')}}">
+		  			<img src="{{ asset('images/logo-kimia.png')}}">
+		  			<img src="{{ asset('images/logo-negaraku.png')}}">
 		  		</div>
 			  	<div class="col-sm-3 header-right">
 			  		<span class="icon-setting"></span>
@@ -55,8 +55,8 @@
                   <ul class="nav navbar-nav">
                     <li><a class="active" href="{{ URL::to('')}}">Home</a></li>
                     <li><a href="{{ URL::to('/about')}}">About Us</a></li>
-                    <li><a href="#">Proficiency Testing</a></li>
-                    <li><a href="#">Quality Control Materials</a></li>
+                    <li><a href="{{ URL::to('/pt')}}">Proficiency Testing</a></li>
+                    <li><a href="{{ URL::to('/pm')}}">Quality Control Materials</a></li>
                     <li><a href="#">News</a></li>
                     <li><a href="#">Contact Us</a></li>
                   </ul>

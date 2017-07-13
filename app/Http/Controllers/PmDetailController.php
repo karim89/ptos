@@ -28,10 +28,9 @@ class PmDetailController extends Controller
      */
     public function index($id)
     {
-        $pm_detail = PmDetail::where('pm_id', 1)->paginate(20);
+        $pm_detail = PmDetail::where('pm_id', $id)->paginate(20);
         $pm = Pm::find($id);
-        $month = $this->month();
-        return view('pm_detail.index', compact('pm_detail', 'pm', 'month'));
+        return view('pm_detail.index', compact('pm_detail', 'pm'));
     }
 
     /**
@@ -41,11 +40,8 @@ class PmDetailController extends Controller
      */
     public function create($id)
     {
-        $analyte = $this->analyte();
-        $matrix = $this->matrix();
-        $month = $this->month();
         $pm = Pm::find($id);
-        return view('pm_detail.form', compact('analyte', 'matrix', 'month', 'pm'));
+        return view('pm_detail.form', compact('pm'));
     }
 
     /**
@@ -63,26 +59,30 @@ class PmDetailController extends Controller
         endif;
 
         $pm_detail = new PmDetail;
-        $pm_detail->scheme_id = $request->scheme_id;
-        $pm_detail->start_month = $request->start_month;
-        $pm_detail->matrix_id = $request->matrix_id;
-        $pm_detail->range_from = $request->range_from;
-        $pm_detail->range_to = $request->range_to;
-        $pm_detail->number_of_pm = $request->number_of_pm;
-        $pm_detail->range_to = $request->range_to;
-        $pm_detail->approx = $request->approx;
-        $pm_detail->quantity = $request->quantity;
+        $pm_detail->code = $request->code;
+        $pm_detail->reference = $request->reference;
+        $pm_detail->purity = $request->purity;
+        $pm_detail->validity_period = $request->validity_period;
+        $pm_detail->packaging_size = $request->packaging_size;
+        $pm_detail->availability = $request->availability;
+        $pm_detail->amount_required = $request->amount_required;
+        $pm_detail->max_quantity_dispath = $request->max_quantity_dispath;
+        $pm_detail->coa = $request->coa;
         $pm_detail->price = str_replace(',', '', $request->price);
         $pm_detail->remarks = $request->remarks;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $destinationPath = public_path().'/images/pm/';
+            $filename        = time() . '_' . $file->getClientOriginalName();
+            $filename = str_replace(' ','_',$filename);
+            $uploadSuccess   = $file->move($destinationPath, $filename);
+
+            $pm_detail->path = 'images/pm/'.$filename;
+        }
+        $pm_detail->user_id = \Auth::user()->id;
         $pm_detail->pm_id = $request->pm_id;
         $pm_detail->save();
-        if($request->analyte_id){
-            $no = 0;
-            foreach ($request->analyte_id as  $value) {
-                \DB::table('analyte_pm_detail')->insert(['pm_detail_id' => $pm_detail->id, 'analyte_id' => $request->analyte_id[$no]]);
-                $no++;
-            }
-        }
+        
         return redirect('/scheme/pm/detail/'.$request->pm_id)->with('success','Data Seved.');
     }
 
@@ -106,11 +106,8 @@ class PmDetailController extends Controller
     public function edit($id)
     {
         $pm_detail = PmDetail::find($id);
-        $analyte = $this->analyte();
-        $matrix = $this->matrix();
-        $month = $this->month();
         $pm = Pm::find($pm_detail->pm_id);
-        return view('pm_detail.form', compact('analyte', 'matrix', 'month', 'pm', 'pm_detail'));
+        return view('pm_detail.form', compact('pm', 'pm_detail'));
     }
 
     /**
@@ -130,26 +127,31 @@ class PmDetailController extends Controller
             return redirect('/scheme/pm/detail/'.$pm_detail->pm_id)->with('danger','Data failed to save.');
         endif;
 
-        $pm_detail->scheme_id = $request->scheme_id;
-        $pm_detail->start_month = $request->start_month;
-        $pm_detail->matrix_id = $request->matrix_id;
-        $pm_detail->range_from = $request->range_from;
-        $pm_detail->range_to = $request->range_to;
-        $pm_detail->number_of_pm = $request->number_of_pm;
-        $pm_detail->range_to = $request->range_to;
-        $pm_detail->approx = $request->approx;
-        $pm_detail->quantity = $request->quantity;
+        $pm_detail->code = $request->code;
+        $pm_detail->reference = $request->reference;
+        $pm_detail->purity = $request->purity;
+        $pm_detail->validity_period = $request->validity_period;
+        $pm_detail->packaging_size = $request->packaging_size;
+        $pm_detail->availability = $request->availability;
+        $pm_detail->amount_required = $request->amount_required;
+        $pm_detail->max_quantity_dispath = $request->max_quantity_dispath;
+        $pm_detail->coa = $request->coa;
         $pm_detail->price = str_replace(',', '', $request->price);
         $pm_detail->remarks = $request->remarks;
-        $pm_detail->save();
-        \DB::table('analyte_pm_detail')->where('pm_detail_id',  $pm_detail->id)->delete();
-        if($request->analyte_id){
-            $no = 0;
-            foreach ($request->analyte_id as  $value) {
-                \DB::table('analyte_pm_detail')->insert(['pm_detail_id' => $pm_detail->id, 'analyte_id' => $request->analyte_id[$no]]);
-                $no++;
+        $pm_detail->user_id = \Auth::user()->id;
+        if ($request->hasFile('image')) {
+            if($pm_detail->path) {
+                unlink($pm_detail->path);
             }
+            $file = $request->file('image');
+            $destinationPath = public_path().'/images/pm/';
+            $filename        = time() . '_' . $file->getClientOriginalName();
+            $filename = str_replace(' ','_',$filename);
+            $uploadSuccess   = $file->move($destinationPath, $filename);
+
+            $pm_detail->path = 'images/pm/'.$filename;
         }
+        $pm_detail->save();
         return redirect('/scheme/pm/detail/'.$pm_detail->pm_id)->with('success','Data Seved.');
     }
 
@@ -162,7 +164,9 @@ class PmDetailController extends Controller
     public function destroy($id)
     {
         $pm_detail = PmDetail::find($id);
-        \DB::table('analyte_pm_detail')->where('pm_detail_id',  $pm_detail->id)->delete();
+        if($pm_detail->path) {
+            unlink($pm_detail->path);
+        }
         $pm_id = $pm_detail->pm_id;
         $pm_detail->delete();
         return redirect('/scheme/pm/detail/'.$pm_id)->with('success','Data Deleted.');
@@ -171,30 +175,8 @@ class PmDetailController extends Controller
     public function validation($data)
     {
         return Validator::make($data->all(), [
-            'scheme_id' => 'required'
+            'code' => 'required'
         ]);
     }
 
-    public function matrix()
-    {
-        $list = array('' => 'Please choose');
-        foreach (Matrix::get() as  $val) {
-            $list = $list + array($val->id => $val->code);
-        }
-        return $list;
-    }
-
-    public function analyte()
-    {
-        $list = array();
-        foreach (Analyte::get() as  $val) {
-            $list = $list + array($val->id => $val->code);
-        }
-        return $list;
-    }
-
-    public function month()
-    {
-        return array('' => 'Please choose', 1 => 'Jan.', 2 => 'Feb.', 3 => 'Mar.', 4 => 'Apr.', 5 => 'May', 6 => 'Jun.', 7 => 'Jul.', 8 => 'Aug.', 9 => 'Sep.', 10 => 'Oct.', 11 => 'Nov.', 12 => 'Dec.');
-    }
 }

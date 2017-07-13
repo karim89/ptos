@@ -9,6 +9,7 @@ use App\Role;
 use App\User;
 use App\Models\PermissionRole;
 use App\Models\RoleUser;
+use App\Models\Scheme;
 
 class DataSeeder extends Migration
 {
@@ -85,6 +86,42 @@ class DataSeeder extends Migration
             ], 
         ];
         RoleUser::insert($role_user);
+
+        // scheme
+        DB::table('scheme')->delete();
+        $scheme = [
+            [
+                'id' => 1,
+                'name' => 'Proficiency Testing',
+                'description' => '<p>Why choose KIMIA PTOS proficiency testing schemes?</p>
+
+                                    <ul>
+                                        <li>First PT online system in Malaysia</li>
+                                        <li>Convenient to &nbsp;monitor the status of registration, payment and on-going PT scheme.</li>
+                                        <li>Easily&nbsp;track&nbsp;your shipments&nbsp;online.&nbsp;</li>
+                                        <li>Easy &nbsp;to submit results &nbsp;through the secure website</li>
+                                        <li>Be able to download the important documents related to PT scheme and PT report 24/7.</li>
+                                    </ul>', 
+            ],
+            [
+                'id' => 2,
+                'name' => 'Proficiency Material',
+                'description' => '<p>Centre for Metrology in Chemistry supports accurate measurements by certifying and providing Reference Materials (RM KIMIA) in accordance with ISO 17034:2016 (General requirements for the competence of reference material producers).&nbsp;</p>
+                
+                    <p>The reference materials are used:&nbsp;</p>
+
+                    <ul>
+                        <li>to perform instrument calibrations as part of quality assurance programs;</li>
+                        <li>to verify the accuracy of specific measurements;</li>
+                        <li>to support the development of new measurement methods;</li>
+                        <li>to facilitate commerce and trade.</li>
+                    </ul>
+
+                    <p>Presently the RM KIMIAs are currently available for use in areas such as forensic analysis, industrial materials production and analysis and basic measurements in science and metrology. Each RM KIMIA is supplied with a Certificate of Analysis.&nbsp;<br />
+                    &nbsp;</p>', 
+            ]
+        ];
+        Scheme::insert($scheme);
         
     }
 
