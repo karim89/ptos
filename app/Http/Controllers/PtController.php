@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Proficiency;
+use App\Models\Pt;
 use App\Models\Scheme;
 use App\Models\Size;
 
-class ProficiencyController extends Controller
+class PtController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -27,9 +27,9 @@ class ProficiencyController extends Controller
      */
     public function index()
     {
-        $proficiency = Proficiency::where('scheme_id', 1)->paginate(20);
+        $pt = Pt::where('scheme_id', 1)->paginate(20);
         $scheme = Scheme::find(1);
-        return view('proficiency.index', compact('proficiency', 'scheme'));
+        return view('pt.index', compact('pt', 'scheme'));
     }
 
     /**
@@ -40,7 +40,7 @@ class ProficiencyController extends Controller
     public function create()
     {
         $size = $this->size();
-        return view('proficiency.form', compact('size'));
+        return view('pt.form', compact('size'));
     }
 
     /**
@@ -53,17 +53,17 @@ class ProficiencyController extends Controller
     {
         $validator = $this->validation($request);
         if ($validator->fails()):
-            return redirect('/scheme/proficiency')->with('danger','Data failed to save.');
+            return redirect('/scheme/pt')->with('danger','Data failed to save.');
         endif;
 
-        $proficiency = new Proficiency;
-        $proficiency->code = $request->code;
-        $proficiency->name = $request->name;
-        $proficiency->size_id = $request->size_id;
-        $proficiency->description = $request->description;
-        $proficiency->scheme_id = 1;
-        $proficiency->save();
-        return redirect('/scheme/proficiency')->with('success','Data Seved.');
+        $pt = new Pt;
+        $pt->code = $request->code;
+        $pt->name = $request->name;
+        $pt->size_id = $request->size_id;
+        $pt->description = $request->description;
+        $pt->scheme_id = 1;
+        $pt->save();
+        return redirect('/scheme/pt')->with('success','Data Seved.');
     }
 
     /**
@@ -85,9 +85,9 @@ class ProficiencyController extends Controller
      */
     public function edit($id)
     {
-        $proficiency = Proficiency::find($id);
+        $pt = Pt::find($id);
         $size = $this->size();
-        return view('proficiency.form', compact('proficiency', 'size'));
+        return view('pt.form', compact('pt', 'size'));
     }
 
     /**
@@ -101,17 +101,17 @@ class ProficiencyController extends Controller
     {
         $validator = $this->validation($request);
         if ($validator->fails()):
-            return redirect('/scheme/proficiency')->with('danger','Data failed to save.');
+            return redirect('/scheme/pt')->with('danger','Data failed to save.');
         endif;
 
-        $proficiency = Proficiency::find($id);
-        $proficiency->code = $request->code;
-        $proficiency->name = $request->name;
-        $proficiency->size_id = $request->size_id;
-        $proficiency->description = $request->description;
-        $proficiency->scheme_id = 1;
-        $proficiency->save();
-        return redirect('/scheme/proficiency')->with('success','Data Seved.');
+        $pt = Pt::find($id);
+        $pt->code = $request->code;
+        $pt->name = $request->name;
+        $pt->size_id = $request->size_id;
+        $pt->description = $request->description;
+        $pt->scheme_id = 1;
+        $pt->save();
+        return redirect('/scheme/pt')->with('success','Data Seved.');
     }
 
     /**
@@ -122,9 +122,9 @@ class ProficiencyController extends Controller
      */
     public function destroy($id)
     {
-        $proficiency = Proficiency::find($id);
-        $proficiency->delete();
-        return redirect('/scheme/proficiency')->with('success','Data Deleted.');
+        $pt = Pt::find($id);
+        $pt->delete();
+        return redirect('/scheme/pt')->with('success','Data Deleted.');
     }
 
     public function validation($data)

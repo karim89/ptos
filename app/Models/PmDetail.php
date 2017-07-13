@@ -3,11 +3,11 @@
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class MaterialDetail extends Model {
+class PmDetail extends Model {
 
     use SoftDeletes;
 
-    protected $table = "material_detail";
+    protected $table = "pm_detail";
     protected $guarded = ['id'];
     protected $dates = ['deleted_at'];
 
@@ -21,9 +21,9 @@ class MaterialDetail extends Model {
         return $this->belongsTo('App\Models\Status');
     }
 
-    public function material()
+    public function pm()
     {
-        return $this->belongsTo('App\Models\Material');
+        return $this->belongsTo('App\Models\Pm');
     }
 
 }

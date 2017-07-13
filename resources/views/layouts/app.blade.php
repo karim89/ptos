@@ -111,8 +111,8 @@
                     <li>
                         <a href="#" data-toggle="collapse" data-target="#scheme"><span class="icon-admin-nav icon-scheme"> Proficiency Scheme<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="scheme" class="collapse {{Request::segment(1) == 'scheme' ? 'in' : ''}}">
-                            <li class="{{Request::segment(2) == 'proficiency' ? 'active' : ''}}"><a href="{{ URL::to('/scheme/proficiency')}}"> Profeciency Testing </a></li> 
-                            <li class="{{Request::segment(2) == 'material' ? 'active' : ''}}"><a href="{{ URL::to('/scheme/material')}}"> Quality Control Material</a></li>
+                            <li class="{{Request::segment(2) == 'pt' ? 'active' : ''}}"><a href="{{ URL::to('/scheme/pt')}}"> Proficiency Testing </a></li> 
+                            <li class="{{Request::segment(2) == 'pm' ? 'active' : ''}}"><a href="{{ URL::to('/scheme/pm')}}"> Proficiency Material</a></li>
                         </ul>
                     </li>
                     <li>

@@ -6,9 +6,9 @@ class Cart extends Model {
 
 	protected $table = "cart";
 
-	public function proficiencyDetail()
+	public function ptDetail()
 	{
-        return $this->belongsTo('App\Models\ProficiencyDetail');
+        return $this->belongsTo('App\Models\PtDetail');
     }
 
     public function status()

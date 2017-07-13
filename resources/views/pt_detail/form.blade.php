@@ -2,14 +2,14 @@
 <link href="{{ URL::to('/css/select2.css')}}" rel="stylesheet">
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h2 class="modal-title" id="myModalLabel">Form {{$proficiency->scheme->name}} {{$proficiency->name}}</h2>
+    <h2 class="modal-title" id="myModalLabel">Form {{$pt->scheme->name}} {{$pt->name}}</h2>
 </div>
 <div class="modal-body">
-	@if(isset($proficiency_detail))
-		{!! Form::model($proficiency_detail, array('url'=> URL::to('scheme/proficiency/detail/update/'.$proficiency_detail->id), 'class'=>'form-horizontal', 'enctype' => 'multipart/form-data')) !!}
+	@if(isset($pt_detail))
+		{!! Form::model($pt_detail, array('url'=> URL::to('scheme/pt/detail/update/'.$pt_detail->id), 'class'=>'form-horizontal', 'enctype' => 'multipart/form-data')) !!}
 	@else
-		{!! Form::open(array('url' => 'scheme/proficiency/detail/store', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data')) !!}
-        <input type="hidden" name="proficiency_id" value="{{$proficiency->id}}">
+		{!! Form::open(array('url' => 'scheme/pt/detail/store', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data')) !!}
+        <input type="hidden" name="pt_id" value="{{$pt->id}}">
 	@endif
 	<div class="row">
 		<div class="form-group  col-md-12 ">
@@ -33,7 +33,7 @@
         <div class="form-group  col-md-12 ">
             <label class="col-md-4 control-label">Analyte</label>
             <div class="col-md-8">
-                {!! Form::select('analyte_id[]',  $analyte, isset($proficiency_detail) ? $proficiency_detail->analyte->pluck('analyte_id') : null, array('class'=>'form-control select2', 'multiple'=>'multiple')) !!}
+                {!! Form::select('analyte_id[]',  $analyte, isset($pt_detail) ? $pt_detail->analyte->pluck('analyte_id') : null, array('class'=>'form-control select2', 'multiple'=>'multiple')) !!}
             </div>
         </div>
     	<div class="form-group  col-md-12 ">
@@ -81,7 +81,7 @@
         <div class="form-group col-md-12 ">
     		<label class="col-md-4 control-label"></label>
             <div class="col-md-8">
-                <button type="submit" name="save" class="btn btn-primary pull-right btn-sm" value="save">{{isset($proficiency_detail) ? "Update" : "Save"}}</button>
+                <button type="submit" name="save" class="btn btn-primary pull-right btn-sm" value="save">{{isset($pt_detail) ? "Update" : "Save"}}</button>
             </div>
         </div>
     </div>

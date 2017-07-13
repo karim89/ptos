@@ -15,8 +15,8 @@ class CreateBasketTable extends Migration
     {
         Schema::create('basket', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('material_detail_id')->unsigned()->nullable();           
-            $table->foreign('material_detail_id')->references('id')->on('material_detail');
+            $table->integer('pm_detail_id')->unsigned()->nullable();           
+            $table->foreign('pm_detail_id')->references('id')->on('pm_detail');
             $table->integer('status_id')->unsigned()->nullable();           
             $table->foreign('status_id')->references('id')->on('status');
             $table->integer('user_id')->unsigned()->nullable();           

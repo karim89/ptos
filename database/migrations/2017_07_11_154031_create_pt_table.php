@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProficiencyTable extends Migration
+class CreatePtTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateProficiencyTable extends Migration
      */
     public function up()
     {
-        Schema::create('proficiency', function (Blueprint $table) {
+        Schema::create('pt', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('scheme_id')->unsigned()->nullable();           
             $table->foreign('scheme_id')->references('id')->on('scheme');
@@ -38,6 +38,6 @@ class CreateProficiencyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proficiency');
+        Schema::dropIfExists('pt');
     }
 }

@@ -15,8 +15,8 @@ class CreateCartTable extends Migration
     {
         Schema::create('cart', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('proficiency_detail_id')->unsigned()->nullable();           
-            $table->foreign('proficiency_detail_id')->references('id')->on('proficiency_detail');
+            $table->integer('pt_detail_id')->unsigned()->nullable();           
+            $table->foreign('pt_detail_id')->references('id')->on('pt_detail');
             $table->integer('status_id')->unsigned()->nullable();           
             $table->foreign('status_id')->references('id')->on('status');
             $table->integer('user_id')->unsigned()->nullable();           

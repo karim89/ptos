@@ -44,9 +44,9 @@ class SchemeController extends Controller
         $scheme->description = $request->description;
         $scheme->save();
         if($id == 1) {
-            return redirect('/scheme/proficiency')->with('success','Data Seved.');
+            return redirect('/scheme/pt')->with('success','Data Seved.');
         }else{
-            return redirect('/scheme/material')->with('success','Data Seved.');
+            return redirect('/scheme/pm')->with('success','Data Seved.');
         }
     }
 }

@@ -3,11 +3,11 @@
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Material extends Model {
+class Pm extends Model {
 
 	use SoftDeletes;
 
-	protected $table = "material";
+	protected $table = "pm";
 	protected $guarded = ['id'];
 	protected $dates = ['deleted_at'];
 
@@ -31,9 +31,9 @@ class Material extends Model {
         return $this->belongsTo('App\Models\Status');
     }
 
-    public function proficiencyDetail()
+    public function pmDetail()
     {
-        return $this->hasMany('App\Models\MaterialDetail');
+        return $this->hasMany('App\Models\PmDetail');
     }
 
 }

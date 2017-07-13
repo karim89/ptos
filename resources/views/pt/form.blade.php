@@ -3,10 +3,10 @@
     <h2 class="modal-title" id="myModalLabel">Form Proficiency Testing</h2>
 </div>
 <div class="modal-body">
-	@if(isset($proficiency))
-		{!! Form::model($proficiency, array('url'=> URL::to('scheme/proficiency/update/'.$proficiency->id), 'class'=>'form-horizontal', 'enctype' => 'multipart/form-data')) !!}
+	@if(isset($pt))
+		{!! Form::model($pt, array('url'=> URL::to('scheme/pt/update/'.$pt->id), 'class'=>'form-horizontal', 'enctype' => 'multipart/form-data')) !!}
 	@else
-		{!! Form::open(array('url' => 'scheme/proficiency/store', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data')) !!}
+		{!! Form::open(array('url' => 'scheme/pt/store', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data')) !!}
 	@endif
 	<div class="row">
 		<div class="form-group  col-md-12 ">
@@ -36,7 +36,7 @@
         <div class="form-group col-md-12 ">
     		<label class="col-md-4 control-label"></label>
             <div class="col-md-8">
-                <button type="submit" name="save" class="btn btn-primary pull-right btn-sm" value="save">{{isset($proficiency) ? "Update" : "Save"}}</button>
+                <button type="submit" name="save" class="btn btn-primary pull-right btn-sm" value="save">{{isset($pt) ? "Update" : "Save"}}</button>
             </div>
         </div>
     </div>

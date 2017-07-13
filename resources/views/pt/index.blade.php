@@ -7,7 +7,7 @@
             {!!$scheme->description!!}
             <a href="#" class="btn btn-warning btn-sm pull-right" data-toggle="modal" data-target="#myModal" onClick="dataModal('{{ URL::to('scheme/edit/'.$scheme->id)}}')">Edit</a>
         </div>
-        <a href="#" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#myModal" onClick="dataModal('{{ URL::to('scheme/proficiency/create')}}')">Add</a>
+        <a href="#" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#myModal" onClick="dataModal('{{ URL::to('scheme/pt/create')}}')">Add</a>
         <br><br>
         <table class="table">
             <tr>
@@ -18,23 +18,23 @@
                 <th width="10%">Action</th>
             </tr>
             <?php $no =1; ?>
-            @forelse($proficiency as $val)
+            @forelse($pt as $val)
                 <tr>
                     <td>{{$no++}}</td>
-                    <td><a href="{{ URL::to('scheme/proficiency/detail/'.$val->id)}}">{{$val->code}}</a></td>
+                    <td><a href="{{ URL::to('scheme/pt/detail/'.$val->id)}}">{{$val->code}}</a></td>
                     <td>{{$val->name}}</td>
                     <td>{{$val->description}}</td>
                     <td>
-                        <a href="#"  data-toggle="modal" data-target="#myModal" class="btn btn-warning btn-xs "  onClick="dataModal('{{ URL::to('scheme/proficiency/edit')}}/{{$val->id}}')" >Edit</a>
-                        @if(count($val->proficiencyDetail) == 0)
-                            <a href="{{ URL::to('scheme/proficiency/destroy/'.$val->id)}}" class="btn btn-danger btn-xs pull-right" onclick= "return confirm('Are you sure ?')">Delete</a>
+                        <a href="#"  data-toggle="modal" data-target="#myModal" class="btn btn-warning btn-xs "  onClick="dataModal('{{ URL::to('scheme/pt/edit')}}/{{$val->id}}')" >Edit</a>
+                        @if(count($val->ptDetail) == 0)
+                            <a href="{{ URL::to('scheme/pt/destroy/'.$val->id)}}" class="btn btn-danger btn-xs pull-right" onclick= "return confirm('Are you sure ?')">Delete</a>
                         @endif
                     </td>
                 </tr>    
             @empty
             @endforelse
         </table>
-        <div class="pages">{!! str_replace('/?', '?', $proficiency->render()) !!}</div>
+        <div class="pages">{!! str_replace('/?', '?', $pt->render()) !!}</div>
     </div>
 </div>
 

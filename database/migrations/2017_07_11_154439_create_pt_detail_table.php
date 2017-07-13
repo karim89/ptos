@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProficiencyDetailTable extends Migration
+class CreatePtDetailTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateProficiencyDetailTable extends Migration
      */
     public function up()
     {
-        Schema::create('proficiency_detail', function (Blueprint $table) {
+        Schema::create('pt_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('proficiency_id')->unsigned()->nullable();           
-            $table->foreign('proficiency_id')->references('id')->on('proficiency');
+            $table->integer('pt_id')->unsigned()->nullable();           
+            $table->foreign('pt_id')->references('id')->on('pt');
             $table->integer('matrix_id')->unsigned()->nullable();           
             $table->foreign('matrix_id')->references('id')->on('matrix');
             $table->integer('status_id')->unsigned()->nullable();           
@@ -45,6 +45,6 @@ class CreateProficiencyDetailTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proficiency_detail');
+        Schema::dropIfExists('pt_detail');
     }
 }

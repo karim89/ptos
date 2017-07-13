@@ -29,22 +29,37 @@ Route::get('/pdf', 'HomeController@pdf');
 Route::group(['prefix' => 'scheme', 'middleware' => ['role:admin']], function() {
 	Route::get('/edit/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'SchemeController@edit']);
 	Route::post('/update/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'SchemeController@update']);
-	Route::group(['prefix' => 'proficiency', 'middleware' => ['role:admin']], function() {
-		Route::get('/', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@index']);
-		Route::get('/create', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@create']);
-		Route::post('/store', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@store']);
-		Route::get('/edit/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@edit']);
-		Route::post('/update/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@update']);
-		Route::get('/destroy/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@destroy']);
+	Route::group(['prefix' => 'pt', 'middleware' => ['role:admin']], function() {
+		Route::get('/', ['middleware' => ['permission:user-manager'], 'uses' => 'PtController@index']);
+		Route::get('/create', ['middleware' => ['permission:user-manager'], 'uses' => 'PtController@create']);
+		Route::post('/store', ['middleware' => ['permission:user-manager'], 'uses' => 'PtController@store']);
+		Route::get('/edit/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PtController@edit']);
+		Route::post('/update/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PtController@update']);
+		Route::get('/destroy/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PtController@destroy']);
 		
-		Route::get('/detail/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@index']);
-		Route::get('/detail/create/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@create']);
-		Route::post('/detail/store', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@store']);
-		Route::get('/detail/edit/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@edit']);
-		Route::post('/detail/update/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@update']);
-		Route::get('/detail/destroy/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@destroy']);
+		Route::get('/detail/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PtDetailController@index']);
+		Route::get('/detail/create/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PtDetailController@create']);
+		Route::post('/detail/store', ['middleware' => ['permission:user-manager'], 'uses' => 'PtDetailController@store']);
+		Route::get('/detail/edit/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PtDetailController@edit']);
+		Route::post('/detail/update/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PtDetailController@update']);
+		Route::get('/detail/destroy/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PtDetailController@destroy']);
+
+	});
+
+	Route::group(['prefix' => 'pm', 'middleware' => ['role:admin']], function() {
+		Route::get('/', ['middleware' => ['permission:user-manager'], 'uses' => 'PmController@index']);
+		Route::get('/create', ['middleware' => ['permission:user-manager'], 'uses' => 'PmController@create']);
+		Route::post('/store', ['middleware' => ['permission:user-manager'], 'uses' => 'PmController@store']);
+		Route::get('/edit/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PmController@edit']);
+		Route::post('/update/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PmController@update']);
+		Route::get('/destroy/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PmController@destroy']);
 		
-		
+		Route::get('/detail/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PmDetailController@index']);
+		Route::get('/detail/create/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PmDetailController@create']);
+		Route::post('/detail/store', ['middleware' => ['permission:user-manager'], 'uses' => 'PmDetailController@store']);
+		Route::get('/detail/edit/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PmDetailController@edit']);
+		Route::post('/detail/update/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PmDetailController@update']);
+		Route::get('/detail/destroy/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'PmDetailController@destroy']);
 		
 	});
 });
