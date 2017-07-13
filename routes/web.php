@@ -38,6 +38,12 @@ Route::group(['prefix' => 'scheme', 'middleware' => ['role:admin']], function() 
 		Route::get('/destroy/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyController@destroy']);
 		
 		Route::get('/detail/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@index']);
+		Route::get('/detail/create/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@create']);
+		Route::post('/detail/store', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@store']);
+		Route::get('/detail/edit/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@edit']);
+		Route::post('/detail/update/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@update']);
+		Route::get('/detail/destroy/{id}', ['middleware' => ['permission:user-manager'], 'uses' => 'ProficiencyDetailController@destroy']);
+		
 		
 		
 	});

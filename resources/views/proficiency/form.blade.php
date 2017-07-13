@@ -14,10 +14,17 @@
             <div class="col-md-8">
                 {!! Form::text('code', null, array('class'=>'form-control', 'required'=>'', 'id' => 'code', 'autocomplete' => 'off', "oninvalid" => "this.setCustomValidity('Required.')", "oninput" => "setCustomValidity('')")) !!}
             </div>
-        </div><div class="form-group  col-md-12 ">
+        </div>
+        <div class="form-group  col-md-12 ">
             <label class="col-md-4 control-label">Name <font color='red'>*</font></label>
             <div class="col-md-8">
                 {!! Form::text('name', null, array('class'=>'form-control', 'required'=>'', 'id' => 'name', 'autocomplete' => 'off', "oninvalid" => "this.setCustomValidity('Required.')", "oninput" => "setCustomValidity('')")) !!}
+            </div>
+        </div>
+        <div class="form-group  col-md-12 ">
+            <label class="col-md-4 control-label">Size</label>
+            <div class="col-md-8">
+                {!! Form::select('size_id',  $size, null, array('class'=>'form-control')) !!}
             </div>
         </div>
     	<div class="form-group  col-md-12 ">

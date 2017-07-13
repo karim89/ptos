@@ -26,12 +26,11 @@ class CreateProficiencyDetailTable extends Migration
             $table->integer('start_month')->nullable();
             $table->double('range_from', 15, 2)->nullable();
             $table->double('range_to', 15, 2)->nullable();
-            $table->string('number_of_pt')->nullable();
-            $table->string('approx_size')->nullable();
+            $table->integer('number_of_pt')->nullable();
             $table->integer('approx');
             $table->integer('quantity');
             $table->double('price', 15, 2)->nullable();
-            $table->text('remaks')->nullable();
+            $table->text('remarks')->nullable();
             $table->integer('user_id')->unsigned()->nullable();           
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

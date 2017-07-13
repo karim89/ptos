@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Proficiency;
 use App\Models\Scheme;
+use App\Models\Size;
 
 class ProficiencyController extends Controller
 {
@@ -38,7 +39,8 @@ class ProficiencyController extends Controller
      */
     public function create()
     {
-        return view('proficiency.form');
+        $size = $this->size();
+        return view('proficiency.form', compact('size'));
     }
 
     /**
@@ -57,6 +59,7 @@ class ProficiencyController extends Controller
         $proficiency = new Proficiency;
         $proficiency->code = $request->code;
         $proficiency->name = $request->name;
+        $proficiency->size_id = $request->size_id;
         $proficiency->description = $request->description;
         $proficiency->scheme_id = 1;
         $proficiency->save();
@@ -83,7 +86,8 @@ class ProficiencyController extends Controller
     public function edit($id)
     {
         $proficiency = Proficiency::find($id);
-        return view('proficiency.form', compact('proficiency'));
+        $size = $this->size();
+        return view('proficiency.form', compact('proficiency', 'size'));
     }
 
     /**
@@ -103,6 +107,7 @@ class ProficiencyController extends Controller
         $proficiency = Proficiency::find($id);
         $proficiency->code = $request->code;
         $proficiency->name = $request->name;
+        $proficiency->size_id = $request->size_id;
         $proficiency->description = $request->description;
         $proficiency->scheme_id = 1;
         $proficiency->save();
@@ -128,5 +133,14 @@ class ProficiencyController extends Controller
             'code' => 'required',
             'name' => 'required'
         ]);
+    }
+
+    public function size()
+    {
+        $list = array('' => 'Please choose');
+        foreach (Size::get() as  $val) {
+            $list = $list + array($val->id => $val->code);
+        }
+        return $list;
     }
 }

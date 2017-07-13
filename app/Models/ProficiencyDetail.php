@@ -18,7 +18,7 @@ class ProficiencyDetail extends Model {
 
     public function matrix()
     {
-        return $this->belongsTo('App\Models\matrix');
+        return $this->belongsTo('App\Models\Matrix');
     }
 
     public function status()
@@ -29,6 +29,11 @@ class ProficiencyDetail extends Model {
     public function proficiency()
     {
         return $this->belongsTo('App\Models\Proficiency');
+    }
+
+    public function analyte()
+    {
+        return $this->hasMany('App\Models\AnalyteProficiencyDetail');
     }
 
 }
